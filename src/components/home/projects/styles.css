@@ -1,0 +1,12 @@
+
+.content-link{
+  text-decoration: none;
+  color: inherit;
+}
+
+.content-project{
+  border: 0.1rem solid black;
+  padding: 0.5rem;
+  text-decoration: none;
+  color: inherit;
+}

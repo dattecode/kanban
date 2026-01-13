@@ -1,0 +1,13 @@
+
+.pro-cont{
+  width: 100%;
+  border: 0.1rem solid black;
+  padding: 0.1rem;
+  height: 100vh;
+}
+
+.pro-tasks{
+  border: 0.1rem solid black;
+  padding: 0.1rem;
+  margin: 0.1rem;
+}

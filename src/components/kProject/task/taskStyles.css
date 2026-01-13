@@ -1,0 +1,24 @@
+.task-container {
+  border: 0.1rem solid black;
+  padding: 0.5rem;
+  text-decoration: none;
+  color: inherit;
+  width: 15rem;
+  width: 100%;
+}
+
+.task-header{
+  border: 0.1rem solid black;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title-task {
+  padding: 0.5rem;
+}
+
+.description-task {
+  border: 0.1rem solid black;
+  padding: 0.5rem;
+}

@@ -1,0 +1,31 @@
+
+.app{
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.app-header{
+  border: 0.1rem solid black;
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.Create-project-section{
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem;
+}
+
+.create-project-button{
+  all: unset;
+  width: 15rem;
+  height: 5rem;
+  border: 0.1rem solid black;
+  text-align: center;
+}
+
+.projects-section{
+ border: 0.1rem solid black;
+ padding: 0.2rem;
+}
