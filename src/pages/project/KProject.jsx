@@ -7,13 +7,12 @@ import { Task } from "../../components/kProject/task/Task";
 import { Progress } from "../../components/kProject/Progress/Progress";
 import { UseModalHook } from "../../hooks/UseModalHook";
 import { screensKey } from "../../utils/screensKey";
+import LeftMenuComponent from "../../components/kProject/leftMenu/LeftMenuComponent";
 
 export const KProject = () => {
-  //project data
   const { id } = useParams();
   const dataProject = useSelector(selectStructureById(id));
 
-  //close modals
   const [modalComponent, setModalComponent] = useState(null);
 
   const openModal = (Component) => {
@@ -24,7 +23,6 @@ export const KProject = () => {
     setModalComponent(null);
   };
 
-  //loading initial data
   if (!dataProject) {
     return <p>Cargando proyecto...</p>;
   }
@@ -39,19 +37,21 @@ export const KProject = () => {
         />
       )}
 
-      <div className="kproject-container">
-        <div className="kproject-navbar">
+      <div className="app-container">
+        <header className="kproject-navbar">
           <p>Navbar</p>
-        </div>
+        </header>
 
-        <div className="app-container">
-          <section className="left-menu-app"></section>
+        <main className="kproject-container">
+          <aside className="left-menu-app">
+            <LeftMenuComponent />
+          </aside>
 
           <section className="kproject-section">
             <article className="kproject-info">
-              <h3>{dataProject.title}</h3>
-              <p>{dataProject.description}</p>
-              <p>{dataProject.startProject}</p>
+              <h3 className="kproject-info-title">{dataProject.title}</h3>
+              <p className="kproject-info-text">{dataProject.description}</p>
+              <p className="kproject-info-date">{dataProject.startProject}</p>
             </article>
 
             <section className="kproject-progress">
@@ -62,40 +62,43 @@ export const KProject = () => {
                     +
                   </button>
                 </div>
-                <section className="kp-active">
+
+                <div className="kp-active">
                   {dataProject.startStackId.map((task) => (
                     <Task key={task} id={task} />
                   ))}
-                </section>
+                </div>
               </section>
 
               <section className="kproject-in-progress">
                 <div className="kproject-progress-to-do">
                   <h2>En progreso</h2>
-                  <button onClick={() => openModal(screensKey.MODALS.progress)}>
+                  <button
+                    onClick={() => openModal(screensKey.MODALS.progress)}
+                  >
                     +
                   </button>
                 </div>
-                <section className="kp-active">
-                  {dataProject.inProgressStack.map((task) => (
-                    <Progress key={task} id={task} />
-                  ))}
-                </section>
+
+                <div className="kp-active">
+                  <Progress progressId={dataProject.inProgressStack} />
+                </div>
               </section>
 
               <section className="kproject-completed">
                 <div className="kproject-completed-to-do">
                   <h2>Completado</h2>
                 </div>
-                <section className="kp-active">
+
+                <div className="kp-active">
                   {dataProject.completedStackId.map((task) => (
                     <p key={task}>{task}</p>
                   ))}
-                </section>
+                </div>
               </section>
             </section>
           </section>
-        </div>
+        </main>
       </div>
     </>
   );

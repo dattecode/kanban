@@ -1,0 +1,70 @@
+:root {
+  /* =========================
+     BRAND
+  ========================== */
+  --primary-color: #15173D;      /* morado principal */
+  --primary-hover: #472c8f;
+  --primary-soft: #F1E9E9;
+
+  /* =========================
+     BACKGROUNDS
+  ========================== */
+  --bg-app: #f8fafc;             /* fondo general */
+  --bg-panel: #ffffff;           /* cards / columnas */
+  --bg-soft: #f0ecf9;             /* secciones suaves */
+  --bg-muted: #e5e7eb;            /* divisores */
+
+  /* =========================
+     TEXT
+  ========================== */
+  --text-title: #1e1b4b;          /* títulos */
+  --text-primary: #0f172a;        /* texto principal */
+  --text-secondary: #475569;      /* texto normal */
+  --text-light: #64748b;          /* descripciones */
+  --text-muted: #94a3b8;          /* fechas / meta */
+  --text-white: #ffffff;
+
+  /* =========================
+     STATUS / PRIORITY
+  ========================== */
+  --status-high-bg: #fee2e2;
+  --status-high-text: #b91c1c;
+
+  --status-medium-bg: #fef9c3;
+  --status-medium-text: #a16207;
+
+  --status-low-bg: #dcfce7;
+  --status-low-text: #166534;
+
+  /* =========================
+     PROGRESS
+  ========================== */
+  --progress-bg: #f1f5f9;
+  --progress-active: #6366f1;
+  --progress-completed: #22c55e;
+
+  /* =========================
+     BORDERS & SHADOWS
+  ========================== */
+  --border-color: #e2e8f0;
+  --border-radius-sm: 6px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 16px;
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 8px rgba(0,0,0,0.08);
+  --shadow-lg: 0 10px 20px rgba(0,0,0,0.12);
+
+  /* =========================
+     FONTSIZE
+  ========================== */
+  --font-xs: 8px;
+  --font-sm: 10px;
+  --font-md: 16px;
+  --font-lg: 20px;
+  --font-xl: 24px;
+  --font-xxl: 36px;
+
+  --font-semibold: 600;
+  --font-bold: 700;
+}

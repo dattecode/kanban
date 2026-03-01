@@ -1,6 +1,6 @@
 
 
-export const pagination = (array, page, limitPerPage) => {
+export const carrusel = (array, page, limitPerPage) => {
  
   const sliceEnd = page * limitPerPage;
   const sliceStart = sliceEnd - limitPerPage;

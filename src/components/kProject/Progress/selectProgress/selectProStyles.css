@@ -1,0 +1,40 @@
+@import "../../../../App.css";
+
+/* CONTENEDOR GENERAL */
+.select-progress {
+  display: flex;
+  flex-direction: column;
+  height: 100%;          /* 🔑 hereda del Progress */
+  overflow: hidden;      /* 🔑 bloquea scroll global */
+}
+
+/* HEADER */
+.sp-header {
+  padding: 0.5rem;
+  border-bottom: 1px solid black;
+  flex-shrink: 0;
+}
+
+/* TASK LIST (ÚNICO SCROLL) */
+.sp-tasks {
+  flex: 1;               /* 🔑 ocupa el espacio disponible */
+  overflow-y: auto;      /* 🔑 scroll solo acá */
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* EMPTY STATE */
+.sp-empty {
+  opacity: 0.6;
+  font-style: italic;
+}
+
+/* DESCRIPCIÓN */
+.sp-description {
+  padding: 0.5rem;
+  border-top: 1px solid black;
+  flex-shrink: 0;        /* 🔑 nunca entra al scroll */
+  background-color: var(--secondary-color);
+}
