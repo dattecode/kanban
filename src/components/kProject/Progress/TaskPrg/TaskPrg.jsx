@@ -5,12 +5,18 @@ import { useEffect, useState } from "react";
 import { UseProgress } from "../../../../hooks/UseProgress";
 import { StructureDataHook } from "../../../../hooks/StructureDataHook";
 import { taskProgressService } from "../../../../services/taskProgressService";
+import { UseModalHook } from "../../../../hooks/UseModalHook";
+import { ChangePriorityTask } from "../../task/changePriorityTask/ChangePriorityTask";
+import "./taskPrgStyles.css";
 
 export const TaskPrg = ({ id, progressId }) => {
   const [prgInstack, setPrgInstack] = useState(null);
+  const [showEdit, setShowEdit] = useState(false);
+
+  const handleShowEdit = () => setShowEdit(!showEdit);
 
   const dataTask = useSelector(selectedTaskById(id));
-  const dataProject = useSelector(selectStructureById(dataTask.projectId));
+  const dataProject = useSelector(selectStructureById(dataTask?.projectId));
   const dataProgress = useSelector((state) => state.progressProject.data);
 
   const { replaceAll } = UseProgress();
@@ -44,28 +50,61 @@ export const TaskPrg = ({ id, progressId }) => {
   useEffect(() => {
     if (!dataProject) return;
     setPrgInstack(
-      dataProject.inProgressStack.findIndex((id) => id === progressId)
+      dataProject.inProgressStack.findIndex((pid) => pid === progressId)
     );
   }, [dataProject, progressId]);
 
+  if (!dataTask) return null;
+
+  const priorityClass = `priority-${dataTask.priority?.toLowerCase()}`;
+
   return (
-    <div className="task-prg">
-      <section className="task-prg-nav">
-        {!service.isFirst && <button onClick={prevProgress}>prev</button>}
-        <h3>TaskPrg</h3>
-        <div>
+    <>
+      {showEdit && (
+        <UseModalHook
+          id={id}
+          changeModal={handleShowEdit}
+          nameComponent={ChangePriorityTask}
+        />
+      )}
+
+      <div className="task-prg-card">
+        <div className="task-prg-header">
+          <span className={`task-priority ${priorityClass}`}>
+            {dataTask.priority}
+          </span>
+
+          <button className="task-menu-btn" onClick={handleShowEdit}>
+            ⋯
+          </button>
+        </div>
+
+        <h4 className="task-prg-title">{dataTask.title}</h4>
+
+        <p className="task-prg-description">
+          {dataTask.description}
+        </p>
+
+        <div className="task-prg-footer">
+          {!service.isFirst && (
+            <button className="btn-nav" onClick={prevProgress}>
+              ←
+            </button>
+          )}
+
           {!service.isLast ? (
-            <button onClick={nextProgress}>next</button>
+            <button className="btn-nav primary" onClick={nextProgress}>
+              →
+            </button>
           ) : (
-            <button onClick={completeTask}>completed</button>
+            <button className="btn-nav success" onClick={completeTask}>
+              ✔
+            </button>
           )}
         </div>
-      </section>
-
-      <p>{dataTask.title}</p>
-      <p>{dataTask.description}</p>
-      <p>{dataTask.priority}</p>
-      <p>{dataTask.id}</p>
-    </div>
+      </div>
+    </>
   );
 };
+
+export default TaskPrg;

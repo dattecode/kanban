@@ -1,0 +1,149 @@
+/* =========================
+   CARD BASE
+========================= */
+
+.task-prg-card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  border: 1px solid #e5e7eb;
+  transition: 0.15s ease;
+}
+
+.task-prg-card:hover {
+  border-color: #d1d5db;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.task-prg-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-menu-btn {
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #6b7280;
+  padding: 4px;
+}
+
+.task-menu-btn:hover {
+  color: #111827;
+}
+
+/* =========================
+   PRIORITY BADGE
+========================= */
+
+.task-priority {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+/* Alta */
+.priority-alta {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+/* Media */
+.priority-media {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+/* Baja */
+.priority-baja {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.task-prg-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.task-prg-description {
+  font-size: 0.85rem;
+  color: #6b7280;
+  line-height: 1.4;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.task-prg-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn-nav {
+  border: none;
+  background: #f3f4f6;
+  color: #374151;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: 0.15s ease;
+}
+
+.btn-nav:hover {
+  background: #e5e7eb;
+}
+
+.btn-nav.primary {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.btn-nav.primary:hover {
+  background: #bfdbfe;
+}
+
+.btn-nav.success {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.btn-nav.success:hover {
+  background: #bbf7d0;
+}

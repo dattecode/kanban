@@ -1,0 +1,123 @@
+.left-menu-section {
+  width: 280px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1.5rem;
+  background: #f5f6f8;
+  border-right: 1px solid #e4e7ec;
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+}
+
+/* Sections */
+.left-menu-section section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Titles */
+.left-menu-section h3,
+.left-menu-section h4 {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #344054;
+  letter-spacing: 0.5px;
+}
+
+/* Items container */
+.left-menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-height: 260px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+/* Minimal scrollbar */
+.left-menu-items::-webkit-scrollbar {
+  width: 4px;
+}
+
+.left-menu-items::-webkit-scrollbar-thumb {
+  background: #d0d5dd;
+  border-radius: 10px;
+}
+
+/* Item */
+.left-menu-item {
+  background: #ffffff;
+  padding: 0.75rem 0.9rem;
+  border-radius: 10px;
+  border: 1px solid #e4e7ec;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s ease;
+  font-size: 0.85rem;
+}
+
+.left-menu-item:hover {
+  background: #f9fafb;
+  border-color: #d0d5dd;
+  box-shadow: 0 4px 12px rgba(16, 24, 40, 0.08);
+}
+
+/* Title */
+.left-menu-item-title {
+  font-weight: 500;
+  color: #101828;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Type badge (soft style like kanban counters) */
+.left-menu-item-type {
+  font-size: 0.7rem;
+  background: #eef2ff;
+  color: #4f46e5;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-weight: 500;
+}
+
+/* Number badge */
+.left-menu-item-badge {
+  font-size: 0.7rem;
+  background: #e0e7ff;
+  color: #4338ca;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+/* Empty state */
+.left-menu-empty {
+  font-size: 0.8rem;
+  color: #98a2b3;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+/* Status indicator */
+.status-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.status-indicator.in-progress {
+  background: #f59e0b;
+}
+
+.status-indicator.completed {
+  background: #22c55e;
+}
+
+.status-indicator.not-started {
+  background: #98a2b3;
+}

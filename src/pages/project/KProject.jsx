@@ -49,12 +49,19 @@ export const KProject = () => {
 
           <section className="kproject-section">
             <article className="kproject-info">
-              <h3 className="kproject-info-title">{dataProject.title}</h3>
-              <p className="kproject-info-text">{dataProject.description}</p>
-              <p className="kproject-info-date">{dataProject.startProject}</p>
+              <h3 className="kproject-info-title">
+                {dataProject.title}
+              </h3>
+              <p className="kproject-info-text">
+                {dataProject.description}
+              </p>
+              <p className="kproject-info-date">
+                {dataProject.startProject}
+              </p>
             </article>
 
             <section className="kproject-progress">
+              {/* POR HACER */}
               <section className="kproject-tasks">
                 <div className="kproject-to-do">
                   <h2>Por hacer</h2>
@@ -70,6 +77,7 @@ export const KProject = () => {
                 </div>
               </section>
 
+              {/* EN PROGRESO */}
               <section className="kproject-in-progress">
                 <div className="kproject-progress-to-do">
                   <h2>En progreso</h2>
@@ -85,6 +93,7 @@ export const KProject = () => {
                 </div>
               </section>
 
+              {/* COMPLETADO */}
               <section className="kproject-completed">
                 <div className="kproject-completed-to-do">
                   <h2>Completado</h2>
